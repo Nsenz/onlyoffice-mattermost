@@ -15,7 +15,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v3
         with:
-          node-version: '16.15.1'
+          node-version: 16.x
       - name: Get Info
         run: |
           echo "id=$(jq -r '.id' plugin.json)" >> $GITHUB_OUTPUT
