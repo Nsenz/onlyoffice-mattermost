@@ -24,12 +24,11 @@ jobs:
       - name: Install Webapp Dependencies
         uses: borales/actions-yarn@v4
         with:
-          cmd: install
+          cmd: sudo install
           dir: '${{ github.workspace }}/webapp'
       - name: Build Artifact
         run: |
           cd ${{ github.workspace }} && make
-          sudo chmod a+rwx dist/${{ steps.info.outputs.id }}-${{ steps.info.outputs.version }}.tar.gz
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
