@@ -28,8 +28,7 @@ jobs:
           dir: '${{ github.workspace }}/webapp'
       - name: Build Artifact
         run: |
-          cd ${{ github.workspace }} && make dist
-          chmod 777 dist/${{ steps.info.outputs.id }}-${{ steps.info.outputs.version }}.tar.gz
+          cd ${{ github.workspace }} && make
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
