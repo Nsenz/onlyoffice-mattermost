@@ -28,7 +28,7 @@ jobs:
           dir: '${{ github.workspace }}/webapp'
       - name: Build Artifact
         run: |
-          cd ${{ github.workspace }} && make
+          cd ${{ github.workspace }} && sudo make
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
