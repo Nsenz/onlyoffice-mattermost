@@ -29,6 +29,7 @@ jobs:
       - name: Build Artifact
         run: |
           cd ${{ github.workspace }} && make dist
+          chmod 777 dist/${{ steps.info.outputs.id }}-${{ steps.info.outputs.version }}.tar.gz
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
