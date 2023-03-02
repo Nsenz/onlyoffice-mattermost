@@ -15,7 +15,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v3
         with:
-            node-version: 16.x
+            node-version: 18.x
       - name: Get Info
         run: |
           echo "id=$(jq -r '.id' plugin.json)" >> $GITHUB_OUTPUT
@@ -24,11 +24,11 @@ jobs:
       - name: Install Webapp Dependencies
         uses: borales/actions-yarn@v4
         with:
-          cmd: sudo install
+          cmd: install
           dir: '${{ github.workspace }}/webapp'
       - name: Build Artifact
         run: |
-          cd ${{ github.workspace }} && make
+          cd ${{ github.workspace }} && make dist
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
