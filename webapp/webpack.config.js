@@ -95,7 +95,6 @@ module.exports = {
         'react-dom': 'ReactDOM',
         'react-bootstrap': 'ReactBootstrap',
         'react-router-dom': 'ReactRouterDom',
-        'react-dom': 'ReactDOM',
     },
     output: {
         devtoolNamespace: PLUGIN_ID,
